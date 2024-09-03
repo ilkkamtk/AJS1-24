@@ -22,7 +22,7 @@ const restaurantModal = (restaurant, menu) => {
   const {name, company, address, city, phone, postalCode} = restaurant;
 
   let listaHTML = '';
-  for (const course of menu) {
+  menu.forEach((course) => {
     const {name, price, diets} = course;
     listaHTML += `
     <li>
@@ -31,7 +31,7 @@ const restaurantModal = (restaurant, menu) => {
       <p>Allergeenit: ${diets || 'ei ilmoitettu'}</p>
     </li>
     `;
-  }
+  });
 
   const ravintolaHTML = `
           <header>

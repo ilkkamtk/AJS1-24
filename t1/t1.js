@@ -17,7 +17,7 @@ const teeRavintolaLista = async () => {
 
   restaurants.sort((a, b) => a.name.localeCompare(b.name));
 
-  for (const restaurant of restaurants) {
+  restaurants.forEach((restaurant) => {
     if (restaurant) {
       const {_id} = restaurant;
 
@@ -29,9 +29,9 @@ const teeRavintolaLista = async () => {
         info.innerHTML = '<div>Ladataa...</div>';
 
         const korostetut = document.querySelectorAll('.highlight');
-        for (const korostettu of korostetut) {
+        korostetut.forEach((korostettu) => {
           korostettu.classList.remove('highlight');
-        }
+        });
 
         rivi.classList.add('highlight');
 
@@ -49,7 +49,7 @@ const teeRavintolaLista = async () => {
 
       kohde.append(rivi);
     }
-  }
+  });
 };
 
 teeRavintolaLista();
