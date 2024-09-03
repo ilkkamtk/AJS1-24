@@ -26,6 +26,9 @@ const teeRavintolaLista = async () => {
       const rivi = restaurantRow(restaurant);
 
       rivi.addEventListener('click', async () => {
+        modaali.showModal();
+        info.innerHTML = '<div>Ladataa...</div>';
+
         const korostetut = document.querySelectorAll('.highlight');
         for (const korostettu of korostetut) {
           korostettu.classList.remove('highlight');
@@ -41,9 +44,6 @@ const teeRavintolaLista = async () => {
         console.log('päivan lista', paivanLista.courses);
         // tulosta päivän ruokalista
         const ravintolaHTML = restaurantModal(restaurant, paivanLista.courses);
-
-        modaali.showModal();
-
         info.innerHTML = '';
         info.insertAdjacentHTML('beforeend', ravintolaHTML);
       });
