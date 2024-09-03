@@ -1,6 +1,7 @@
 'use strict';
 import {restaurantModal, restaurantRow} from './components.js';
 import {fetchData} from './fetchData.js';
+import {apiURL} from './variables.js';
 
 const kohde = document.querySelector('tbody');
 const modaali = document.querySelector('dialog');
@@ -10,8 +11,6 @@ const closeModal = document.querySelector('#close-modal');
 closeModal.addEventListener('click', () => {
   modaali.close();
 });
-
-const apiURL = 'https://media1.edu.metropolia.fi/restaurant';
 
 const teeRavintolaLista = async () => {
   const restaurants = await fetchData(apiURL + '/api/v1/restaurants');
